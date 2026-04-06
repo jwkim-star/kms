@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMS_LM SITE 현황</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+            background-color: #f8fafc;
+        }
+        img:-moz-loading { visibility: hidden; }
+        .group:active { transform: scale(0.98); }
+    </style>
+</head>
+<body class="text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <div class="container mx-auto max-w-5xl px-4 py-6 md:py-10 flex-grow">
+        
+        <header class="mb-8 md:mb-12 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center justify-center md:justify-start gap-3">
+                    <i data-lucide="layout-dashboard" class="w-7 h-7 md:w-8 md:h-8 text-blue-600"></i>
+                    KMS_LM 운영 대시보드
+                </h1>
+                <p class="text-slate-500 mt-2 font-medium text-sm md:text-base">실시간 시스템 리소스 및 파트너 연동 현황</p>
+            </div>
+            <div class="px-4 py-2 bg-white rounded-full border border-slate-200 shadow-sm text-xs md:text-sm font-semibold text-slate-600 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span id="current-time">System Online</span>
+            </div>
+        </header>
+
+        <section class="mb-10 md:mb-12">
+            <h2 class="text-lg md:text-xl font-bold text-slate-800 mb-5 flex items-center gap-2 border-b border-slate-200 pb-3">
+                <i data-lucide="monitor" class="w-5 h-5 text-blue-500"></i> 
+                OS System <span class="hidden sm:inline text-slate-400 text-sm font-normal ml-2">(운영체제 및 가상화)</span>
+            </h2>
+            
+            <!-- Card 0: Windows -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
+                <a href="https://notebooklm.google.com/notebook/19174d9d-1123-4140-9200-0c116a2984de/preview" target="_blank" class="group block bg-white rounded-xl md:rounded-2xl p-4 md:p-5 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+                    <div class="h-12 md:h-16 flex items-center justify-center mb-4 md:mb-5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Windows_logo_-_2012_%28dark_blue%29.svg" alt="Windows" class="max-h-full max-w-[60%] object-contain opacity-80">
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="text-[10px] md:text-xs font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">Windows</span>
+                        <span class="text-[9px] md:text-[10px] font-bold text-emerald-600 uppercase tracking-tight">● Active</span>
+                    </div>
+                </a>
+                
+                <!-- Card 1: :Linux -->
+                <a href="https://notebooklm.google.com/notebook/af75e0a1-ac73-48d4-826a-706dd862ef6a/preview" target="_blank" class="group block bg-white rounded-xl md:rounded-2xl p-4 md:p-5 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+                    <div class="h-12 md:h-16 flex items-center justify-center mb-4 md:mb-5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" alt="Linux" class="max-h-full max-w-[50%] object-contain opacity-80">
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="text-[10px] md:text-xs font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">Linux</span>
+                        <span class="text-[9px] md:text-[10px] font-bold text-emerald-600 uppercase tracking-tight">● Active</span>
+                    </div>
+                </a>
+                
+                <!-- Card 2: Hyper-V/VM -->
+                <a href="https://notebooklm.google.com/notebook/327aaf47-b882-4062-a303-93047973c15d/preview" target="_blank" class="group block bg-white rounded-xl md:rounded-2xl p-4 md:p-5 border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300">
+                    <div class="h-12 md:h-16 flex items-center justify-center mb-4 md:mb-5">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vmware.svg" alt="VMware" class="max-h-full max-w-[70%] object-contain opacity-80">
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="text-[10px] md:text-xs font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">Hyper-V / VM</span>
+                        <span class="text-[9px] md:text-[10px] font-bold text-emerald-600 uppercase tracking-tight">● Active</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="mb-10 md:mb-12">
+            <h2 class="text-lg md:text-xl font-bold text-slate-800 mb-5 flex items-center gap-2 border-b border-slate-200 pb-3">
+                <i data-lucide="network" class="w-5 h-5 text-indigo-500"></i> 
+                Partner Systems <span class="hidden sm:inline text-slate-400 text-sm font-normal ml-2">(연동 현황)</span>
+            </h2>
+            
+               <!-- Card 3: HP -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                <a href="https://notebooklm.google.com/notebook/9a48d303-e1d9-48e1-bde2-6c8b41c237d1/preview" target="_blank" class="group block bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="h-16 flex items-center justify-center mb-5"><img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/HP_logo_2012.svg" alt="HP" class="max-h-full max-w-[80%] object-contain opacity-70 group-hover:opacity-100"></div>
+                    <div class="flex justify-center"><span class="px-3 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-bold rounded-full border border-emerald-100 uppercase tracking-widest">● Active</span></div>
+                </a>
+                
+                <!-- Card 4: DELL -->
+                <a href="https://notebooklm.google.com/notebook/ec606db6-c7fd-4ed8-a8d9-6bbeca504e64/preview" target="_blank" class="group block bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="h-16 flex items-center justify-center mb-5"><img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="DELL" class="max-h-full max-w-[80%] object-contain opacity-70 group-hover:opacity-100"></div>
+                    <div class="flex justify-center"><span class="px-3 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-bold rounded-full border border-emerald-100 uppercase tracking-widest">● Active</span></div>
+                </a>
+                
+                <!-- Card 5: Fujitsu -->
+                <a href="https://notebooklm.google.com/notebook/e9bf539a-356f-4620-bd0f-58205cd7e24c/preview" target="_blank" class="group block bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="h-16 flex items-center justify-center mb-5"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAbCAMAAAAeYLy0AAAAaVBMVEX////pAADoAAD++fnqDQ3zmZnxe3v85+f619fzkpLsMzP86+v4xsb4wMD+9vbzlJT2tbX5zs773t7tTk7uVlb1q6v3u7v98fHzjo70n5/uWlr0o6PrJSXva2vqGhrtR0fwc3PsQEDxhIRIAymNAAABeElEQVQ4jZ2U25KDIAyGkyhVEMVjsdp1bd//ITfR2r2oPdB/HAiQzwmZEIAnKs/UJs8OX6iM06KjLBzsCh7cTxhUG2y9GNUUxHk6FgrFUm0Q2EmAbqr5jnUQePzlIe2QTBrEAcRz3vaBzCo1l++dcuc0q6u063hZOm0jNbrCalf63jnl2KGCcjCXQ1T37sROVmvLOcRhGFoDtKSiJgLoifNDlJ3OzQWxaShryCiFCUwksUREHiJcMp8BolRYggwqPACvveUfYcxDSY04FWAwFwOx2EDYAaXgUgHhgKfVKRTUaPZA3ff6NZgRxsdHsGma+DXIE2Jsw0NljYg0fgMCzHy0B9I7kHfqC8pVmYn+QYNSOZ3k7zE5K0jFAWc2Ktm8g5YwjyyS3UDyd/DqkqIydAWPpHwaS/1YoupGTkQkqVtA3h9Bqo/4caV8QijrrBVriXf5ViXV2tcEvO1vU51uLS+qnze/e4WFavqmL4Jc+4N3vKPs55Me9QcroBGgOotaoQAAAABJRU5ErkJggg==" alt="Fujitsu" class="max-h-full max-w-[80%] object-contain opacity-70 group-hover:opacity-100"></div>
+                    <div class="flex justify-center"><span class="px-3 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-bold rounded-full border border-emerald-100 uppercase tracking-widest">● Active</span></div>
+                </a>
+                
+                <!-- Card 6: Lenovo -->
+                <a href="https://notebooklm.google.com/notebook/1bc2e10a-d60b-42c7-947b-13b77cc72800/preview" target="_blank" class="group block bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div class="h-16 flex items-center justify-center mb-5"><img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Lenovo_logo_2015.svg" alt="Lenovo" class="max-h-full max-w-[80%] object-contain opacity-70 group-hover:opacity-100"></div>
+                    <div class="flex justify-center"><span class="px-3 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-bold rounded-full border border-emerald-100 uppercase tracking-widest">● Active</span></div>
+                </a>
+                
+                <!-- Card 7: Broadcom -->
+                <a href="https://notebooklm.google.com/notebook/a651a24d-4289-4647-aec4-91349357266c/preview" target="_blank" class="group block bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-blue-400 transition-all duration-300">
+                    <div class="h-16 flex items-center justify-center mb-5">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYsAAACACAMAAADNjrXOAAAA1VBMVEX///8dHRvcBSsAAAAbGxkYGBYUFBEJCQT09PTx8fHZAADr6+vBwcEXFxSIiIfY2NgrKypgYF/bABncACYODgu7u7uPj45DQ0FXV1VoaGj5+fk2NjXqg4/bAB4lJSPbACN1dXT87O/+9vjh4eH64OTqkJjiNlHaABPwoq3pcoPiRFn85+vzuMCqqqnNzc3+8/blVmqVlZSgoJ9ISEfpdYT2yc/smqLfGj47OznsiZbgJ0X0vsXnZ3n52d3eADPlYXHhQVTyrrfjUGLjN1XqcIXhLEzkYG1WEU/cAAAT40lEQVR4nO1cZ2PiutI22KY4odkmVNPBhJKQ0An93Nz//5Neq1qyZZLNu7s5e1fPh12CZZV5pJnRaISiSEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISPDoLSerbb3eHy4Pz9/dl78ay/o5brqm4zim6TbXp8n4u3v0l2K83TmOFfdhNd347O27u/UXYryImywRGE1zMPnurv1tGMadMBFodbjX3nf37m9C++oK1gRdG87wuzv492B5jFoUGO7iu7v4t+BNZCh4mLPqd/fyr8DE+IgJD85ASMZdLoy7YKFUOoSbHbq7f2mV5+XKQ7F7s1yaNinqW5VvMXWzKoKn18q81siXCi/3n+riSzE0Wg+RkmB6RSqqVAoFWu7gfoIKj4yZqE9ZNRlCQp8/5NhCBTURRL4wjeJjOrdV1U5kEnZSTW5eb9DWIo2rU8HTe77VjNaYt26T283GvJYzuq5nvC7EWrmIctVpKYm76P03nwZnQjqGOqY2Qq+mNjbqjorkf1fy5ki6gQc5dj5UUFhNiWxGNhkLQdMSqlph5mHB1oLQvVG0RLN5GlMTml+XrtovUdoxldBxqURJ8PheDbYJJFwqRtSmpD1qNXYYSbUspO41oWb8gt5gY4GpkM7jjqkvwXcfSKcwF5VusZDtdlvo6aApELvhCr51Bd6UiAuIZM1foIWEqISWbIQm3lNe1YPFVD1CfFOVFlIFU/hejQkQlhyRsBoeih0WpnIfU7VAMV3NP7FFKBcxNaClcrRP+MlcmWbvH5QN/KNuCtTRanw4CTwrJ7zPiOQiZm/oyhBzEYtl1Ce+tlc1Iyimq1mh9Ep+4aSghJgLUF1ZYDsqIQkDaGo5sCofQpMFjeRVyEVizr9dtskbmIsSUMlVpQY+9wR224Ub7UFYdTWvP8BFTG19xEVM17h5kxXKA1RVEVCRY2Stxz7PhTdNGiHdU44qnJxzZLSiyrHzxecipnJrml3JeF08Te9bT90C+HwN6yJrBEtNBAvGDYVDCBc2tdw26YeWJCMmXPhmlI6UFfIDM86MVyHDoM9ruGlUIOz2EC4ypFW/dMIO6LSC37TmGRV/EICMCCq8LtpMnYw6Y7jQVIbKO8YSYi66QDXk4B8HwbIwt7BU+xh+ZA0iBGK3sgSVPOkv9W4wF40yRklViZwZRe9PGs/0l7ya5p6TIhgpRjWGBob+TZSjuMiU/FbpusvogQVJJa9qren0wRuE33SBlnul5WxBF6kdYriIJVsMk8zsIZak63WrBCftTGSil6iUQEmFFwbmQmU9zyLusU26gbjIMBPsaZ4MdrVLJo2uFsgkf6pQ7Rw0LaQVvQFf0+yQ2sFcMCsm95IhwrTn4ZJgEmRJNbkWni+aL+Mc4TKjVkh3vC7ixaElyLssF8xse2L1W9CqK23RLs9qo4cLgfVujgI1EC64mvH0SZAJhbngHM+CHeO/xF94ypyVei6PSQu5rWVYqdbAnHDGk5Uwr7FfiTiZ8tUalqY6Z4fRnas8Fcocr+ZknlVxuRrR02S8HBeZWrAZMRcrgU2wRh30cCLaAzYPfA1CLqqf4CKNymjEjJK5mQw6LhX8ILCf69pQqJ7uwuujpgQg5MKbnIgMvUG7TDRPyCh51oGlgqx3Rmnh8ZEHeBZxXFDWXzizH+JiLVBDDtnSHUR7QGxMKMRc1GBfbGKYRVwoFbQOiBVF05zXHfht1ERmw5GEDb3aJdYopMTEXFBNQRdGCksuGXbWKio7AzZoXtth04RdVWK0eC7wtq7Le2BBLp5FKsqkO7qjgAzrzFch5kLTuNEKuXjAbyIusIOqJcIhHCIr3lVCX4LVgKcrtU4EEVwQQ01d/2LUwgKTiqECk6jHwrsTInw8GPInVodoTpKtBdGRgYEKtZBLtdBZGBzh93tCLpAUfHMq5KKF+pbMcfWI9sRE2Oy8JYIG5TGNsUDkKoqLFBaHiruHDVVoXQGwVeIOh+oDwD4g3nJiLrQ8ti9gFhEFl8lrQi76wlMLmm4gMt7Uy8IQ+VG5BuyKv+aFXKC1o8WQRJBZ1PPC2NMcKofMhgtx+e0SIQV4jOIiwHsaKdTgDjmE6gatxM2Nhwlk7DAXdgs7sXpeSeE9lV3I2kIuRB6tdQamG5pv0W4vaDDouIoE0xbyQxMx6mWKuMCWTC/B3ncRM8kHoRheqW0g6OoaGjv44ymgdDAiubjnlFqOWWG3kMMyDPlrEEjjajaUMOGiomSw7nrBctIy3ReRJlGUnUDWyHTD5I+DaF00T1wVZPOr+rBRr2L+mhdwQXwXrHiIQER6gpo9xmC8cnLW8ZzjN9ORXGAXDlvaYohoMUh14kB6jn3qc0G8Q5toq1dqJwNcCHbW2HTv4cIQGm9+hxEVj2pUmLEhLrQaXTrZGt2bP3ECER/4pBK8L0BdGhxgwMMLBAgjuagiUWVKsDW0QLWEsGUG2CSo4qd32MWGjflcKBVOPsAF+wEuoOkeH2HK4Eikw/jzvSgusqxUC2QHS5AkPh/ZHqGBarqYi2pJ52X9xLtOeFLqee71aC6Q/dFr0MghLjyV/gHQUtTCx0MQ2Oqg6cJwUWUPY7RMLpILARXWGuy6lwZ0prYCJYUKUERxkdQYvXojTotXD+YiEXEQiiy7zwXem1ClVdMFYo/kgjgK6ITlB7kQBIQBUmi6oLAZwwUXLYZMfX5doLD4yliB/95E2/Idl2VLuGCOz/AXaoUuoMjziyQRJpGb+EAVeynUst/hGJTOy8kPQnB1htdFDXtEaUbGtljGPm7rKCz+0LpgA4JokxjBxTosaqcOHpxQDk7v0zpKa1BoJHL50fmFpuapMc7dNIypQMiJ9+Y93OEths4a4EguUsTvqrLFRDkELG6Xu2Mb47hIaVghawk4uggu/gnbZhd4UJ1BcwCNtyBG0hTabvXurotw131q4WNjqkKEXCQbWX8VkOiS2GEkYiBeFo7RMczhCAoXWY/kglgb3oX70Ke9sRv1V03Aj2L6QQYXwcU+PO/hMeohbplQEwk2IGKfll+504DKwFzoyHCjntlZtjNY3UZsuNBmjs56EoxgghZTclbBvPXRXg+rPCw4wQEID1IuGBhkh6ihhA6eC6ylSBgrgouhCXLJm5Y/+y24Ht5cvL0eMgbDspqgnLkSjSugRXHPMl32T30Dc4ZeBWLz986iDUY3sJfDGlirlSnmJPGCeT+KC+x+0rKF0CpjyjKfydoTbUTIdhMRFeAiFdOphorkYuk23fV1dl2bZP439+D7uoNFviRcWKa5u17PTbdpimMgfMVkK3bPjpZIn8TROH1U5HQ4D+I1YQVEo6Aak/wUw6ut5b8WxQUJTNSwipyKt+2wKTY2SMoJFlCVaM0p20MaQAPZQXS4EVwo5n4JPNT28r84i9Psg6+vzbjzCD48Y46c+LbnKa1O73I98peVxFwUeR3Mc3FP4p1sb9LELQ1HQTCxNNTIHOCHoPmnElFckNep5b9rkEBFqGkuZo69N5FRw6FfDadSBLnwnvvZE1Fc+DHXt3e4BKBqet5ZnusKjfc7oMhy9/6egl8WEVyQmAvudSAGgicRexLsn7SEJEJlR4qXo3YrLP1KFBdF7FhoSaqTslFNB86SaLmg+aZ9x/SGuFC6vmKL4oJBZ+s4VvMIhH4Aq8GFPPVdy1NjN64mCblI4dNEIoYAF+SsIslqaLIwvAGxaqr6gM/hqL7N2RGJOxCMBhFxkaZpP8whHlkYXtPsXvOuEDhjvYsJ0wHTJDlEIys9zAWDT3DhUbA4Dy7gQ9+kNrpzer+uOjdeEnGRI8cmxBwGY4M44M0fkFHVo5ZogmqqWKLfEuVFd5c6jxjfpiD3IJXz42CJTVrUdI2m7969NrCL4JNB00DUeZF0MT31Y2tEeX2Ri/Zwv9+S06MOlHpnBxXTO/qOmIfDdr+YhFnBkkm0fBQSmApqHYNckONGXn2Qg+1YRi1li7lu7j67oXmENjHqKbx+tEaNBy7obwCJXZoXEMobPw6m20/CpnU133ot5u5fCg0/A6VFy5XJHjqhzh/uvS4WWzVaLkm93S9ycXQdx3QWrJBxVieXPds+gcut7m4ZfJ/mqvmg0TCaSheKmWeJK8PqhHSJphrpSVVNMiHEWIJm+tEEgCl/kyCVDbhHdI+lB50tIHLeiLBN23AT5If02IzPuzy1VRnURT+pLeEnEH+Riz48ZjV3ft4TTbB1LvS7C7q31Aylqt3K4dQTkWesaay1ea+pm7cjqkpk6DTG+k2zg2HEXHCxRedwJpJBP7dbi2paLXNHlrEoxyHBJGp/1V6gMIdlni/Qu52M/O2duYDKazzc4ct8ZmhZ3OBC8+de+CyJ+KkZbuPULYnFZ/v5SCSjjXfCIFAA0d/tR+c2b8I7yjtx01rwYgJNhgogWWNG8lUulgbZza1Hs9Gay/V3nMHsej6Sa5WiCxiRXNiM5xfmoopdkkB30xVBormulv1+U/cxvEt+IakkgYwrHhm18Sq8xdRSw1PetkPRp3RB0MWMWuE2S1/1o1YkGQQEOYKxQBAhoZGoYM4gQDZ44QReOkkk1TIz9wRnrMR1CeYkFzeBoXrWlJFHapOALYg2yV3cFeJxhrkAtqAUedHpac6zoSXVgijeUcyHurgJmJ+8DjoSwYXK3oUJ4CRKMQjD8hNEGGRVPYhMIz9/4LRAGQUFueOaGj7iywf0fnW6oZZT8zitvbIF7tUMbEMYLZ3b8JmNzk49Kx9ErfIivNlHUCyDK2Ia8Je9lhNRd8SqrzU1SbuoqpvgJbF0PgE6Ikh+U+AFDjgCIRedwQcXihEVTthYgH6lBKgG+pbirwuiF4kDFBJONfdQRrkMmscp/5g2d7MvgRbSkU2F0H1tlTRvLtQK2eKNy5bVp4c5OjGOlYNdhAPGcrjVS3HNndHHK6NpHcQv/xqkUt1c95NXT38yqpFS5AG7GCXSr6Mz++gqq7OWP0Pxu9A3bl5mNU634iASPxfLXbSechz5Szm/FZ2tKzbhjvEof1/td2P86IZudTddYy8txXegc7karunAHZ/VdEzXuF6kofg2dCarxQjksB1Hi5UgRi4h8VPRaX9c5v+BJePqdKStjUBvCETT2Zm/5udFn4fQtu7Xvj4xjF/S0v8ALgYU1uz918zWngFXxOO7v20fvf+Slv61aD+LP4fxZgQWxM9dH2OYAetxIar5f+mXftuLdXyPgmKH/fH4iFxtYzIxDBQW6LhvE9cw0DUeZTmLr+tYV4DP4GrbPzvrHdxer4OMvP5uPDMMC+n23sk1Rr0rm5/a8xpZAAG+vSMxLmagusvIekenz5eBUjeWPQP9NTsqi3drt/PKPg7aV8M4wljqCZz5DOPtk2Hgc9Lx3jQGh73wl9H+ELwZu/5lYICJNzROl2HcgGN11+ZwsjCApDvu7jicnAyYbrc1Hi+XHUqsWxiz4cowgTSdfd3TH/uz923fck6Ty9qEWUieeB4Hxprh4mLMLpcRuIfSbsLc+54LKr4a28nKhSc5Q/e8W7WV0w78MfYoGe6bs4VX3eLoLiYrxwTfvwOZD83jdXLZmWD69Czj/XHgHv/7O4T2a9Cx4KHipEqEogwcoJUNKL4Z0AodAxYZgBskSwNOwhFYAG+QtWfA4gTpqD2QZR8eAhzgwxFU9EvX52IM6UXqpg4p7Rtt8A+QZwfmZQxRG6j6PvjlDqyjFvDHIS7wPtEAcgGrH8OJdILraBmnXPS3//nDfuT04lA/dHWEqgeKu4rksVorgAtkOQEXpzMsejC8oiNfwhNkuyEX2zWQcDs+AXMVFfnHL9lvwkbaQKA90EhnDXg91hXa3hC7SOsZcM2APHsGshcD1D/AEeLChDoUNNWOo9/gOhEdVT8se73w73L9m1H3D3j3MNVXeW5ugfyFXHTO51XfQx2I0vKTiyK4OGCd/4+vxPdxWMHWBPXPRnj696wZ+La/BzQQLlZuD1+qI1xAP4rjArrSxwldb8oMN9XpP18Xhz9rYWzP9OMe5sJ7WqseyYVyPm/rEJ7s4x9z4SKzynJxxBUAgQJJX0EHPC7Qt2B5EC7anoU6wZn9KS7QnQnCRXv17K3b/s8Q0W/DJU6d1dUa66hhNBcnxk25+rMugou2hYTBaLP+kWnc00DYXToyUiNcKI9rTMInuHg+ot7QDu7Hy5Wy/0FpfC+eLbi2wfDGKKNxBmxpFBdL9PkAWJtA/fF8UCK5UGaQXmI2AHrIHeshKzWMz9Bc6KOUb3RRiHBxMAYoK5/b64m58JwsUGVvTWz3+HSZPP7amMxPx8RYLCcz7NNuwUfAQgdN19VRoVxAQXue//bN83UhUyf3chjGXQVI7XG4xD7tFnpH7SZ0cY6jdmc1eGd82pXx+PZWN5CtbsfxB2VkrpaXGWSXcuG5YWi5tI+ji9fiI2QGcfF+hSUhF3HQm/buPPaaGvg+7VKY1PGvxnLnumuk19/OVnyERnCC/03Awu+gzytkHFdH11xjS7GNu86ohz4dL7jIBCYRPz/Cl9r13W6r/MPqisvadY9ktzic4VOczsJynXeoit5o6ZWDN9WTddyreoj2IyfwSr0PS0I/Cje13b0vOqc/eH8BMPZPtT7zQ/e9seDzzRcd3oaOhWGLTi+kUfY/ru939R9+5S/BcoF2c1+LGR3cH8hX6kHjsDJ+a4rTn4SJac5mu/iXFPflbP2IS3qw3OtpHZfZHJEYX1aX5dcC6ePlj62mNmjqD3OcJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkfi3+DxfB8wJl/TZiAAAAAElFTkSuQmCC" alt="Broadcom" class="max-h-full max-w-[80%] object-contain opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300">
+                    </div>
+                    <div class="flex justify-center">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 text-xs font-bold uppercase tracking-wider">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                            Active
+                        </span>
+                    </div>
+                </a>
+                
+                <!-- Card 6: Supermicro -->
+                <a href="https://notebooklm.google.com/notebook/65f6ec3f-a8c5-45ae-9a31-a0991660200d/preview" target="_blank" class="group block bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-blue-400 transition-all duration-300">
+                    <div class="h-16 flex items-center justify-center mb-5">
+                        <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNTExMDdfNjUg%2FMDAxNzYyNTEwMzA4NTUz.Ml4zttCuegKqerM_uCmFa4ILxuZmqvMNPiBnSYZARMQg.P9EsthZ6m2ZabxKHAiFB2tmcTMxsk50bCfye6QMDshEg.JPEG%2F%25BD%25B4%25B8%25B6%25C4%25C4.jpg&type=a340" alt="Supermicro" class="max-h-full max-w-[80%] object-contain opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300" onerror="this.outerHTML='<span class=\'font-black text-xl text-slate-700\'>SUPERMICRO</span>'">
+                    </div>
+                    <div class="flex justify-center">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 text-xs font-bold uppercase tracking-wider">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                            Active
+                        </span>
+                    </div>
+                </a>    
+                
+                <!-- Card 7: Synology -->
+                <a href="https://notebooklm.google.com/notebook/c82cd1e9-e9ef-4945-a200-4f67c12bff8c/preview" target="_blank" class="group block bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-blue-400 transition-all duration-300">
+                    <div class="h-16 flex items-center justify-center mb-5">
+                        <img src="data:image/png;base64,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" alt="Synology" class="max-h-full max-w-[80%] object-contain opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300">
+                    </div>
+                    <div class="flex justify-center">
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 text-xs font-bold uppercase tracking-wider">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                            Active
+                        </span>
+                    </div>
+                </a>    
+                
+                <!-- Card 8: Document -->
+                <a href="https://notebooklm.google.com/notebook/6f067882-fb47-4f4d-95b4-ffbcb5b167b4/preview" target="_blank" class="group block bg-white rounded-2xl p-5 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 hover:border-blue-400 transition-all duration-300">
+                    <div class="h-16 flex items-center justify-center mb-5">
+                        <img src="https://img.icons8.com/color/96/document--v1.png" alt="Document" class="max-h-full object-contain opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300">
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="text-xs font-bold text-slate-600 bg-slate-100 px-2 py-1 rounded-md">표준제안서</span>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-600 text-xs font-bold uppercase tracking-wider">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                            Active
+                        </span>
+                    </div>
+                </a>    
+            </div>
+        </section>
+
+        <section class="mb-10 md:mb-12">
+            <h2 class="text-lg md:text-xl font-bold text-slate-800 mb-5 flex items-center gap-2 border-b border-slate-200 pb-3">
+                <i data-lucide="package-search" class="w-5 h-5 text-indigo-500"></i> 
+                Spare Parts & Inventory <span class="hidden sm:inline text-slate-400 text-sm font-normal ml-2">(부품 재고 확인)</span>
+            </h2>
+            <a href="https://notebooklm.google.com/notebook/eb2efaea-5382-49ba-a547-a219357cea7d/preview" target="_blank" class="group block bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="flex flex-col gap-6">
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                        <div class="flex items-center gap-3 text-blue-600 font-bold uppercase tracking-tight">
+                            <i data-lucide="clipboard-list" class="w-6 h-6"></i> Part Spare Number List
+                        </div>
+                        <span class="px-3 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-bold rounded-full border border-emerald-100 uppercase tracking-widest">● Inventory Active</span>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="flex flex-col items-center p-4 bg-slate-50 rounded-xl group-hover:bg-blue-50 transition-colors">
+                            <i data-lucide="hard-drive" class="w-8 h-8 text-slate-400 mb-2"></i>
+                            <span class="text-xs font-bold text-slate-600 italic">DISK</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-50 rounded-xl group-hover:bg-blue-50 transition-colors">
+                            <i data-lucide="blocks" class="w-8 h-8 text-slate-400 mb-2"></i>
+                            <span class="text-xs font-bold text-slate-600 italic">MEMORY</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-50 rounded-xl group-hover:bg-blue-50 transition-colors">
+                            <i data-lucide="cpu" class="w-8 h-8 text-slate-400 mb-2"></i>
+                            <span class="text-xs font-bold text-slate-600 italic">CPU</span>
+                        </div>
+                        <div class="flex flex-col items-center p-4 bg-slate-50 rounded-xl group-hover:bg-blue-50 transition-colors">
+                            <i data-lucide="settings-2" class="w-8 h-8 text-slate-400 mb-2"></i>
+                            <span class="text-xs font-bold text-slate-600 italic">CONTROLLER</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </section>
+
+        <section class="mb-10 md:mb-12">
+            <h2 class="text-lg md:text-xl font-bold text-slate-800 mb-5 flex items-center gap-2 border-b border-slate-200 pb-3">
+                <i data-lucide="database" class="w-5 h-5 text-blue-500"></i> 
+                Resource Management <span class="hidden sm:inline text-slate-400 text-sm font-normal ml-2">(Drive Upload)</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div class="bg-white rounded-xl md:rounded-2xl p-5 border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4 text-blue-600 font-bold"><i data-lucide="youtube" class="w-5 h-5 text-red-500"></i> YouTube 링크 저장</div>
+                    <div class="space-y-3">
+                        <input type="text" id="ytUrl" placeholder="YouTube 주소를 입력하세요" class="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all">
+                        <button onclick="saveLink()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-2.5 rounded-lg text-sm flex items-center justify-center gap-2 shadow-sm transition-all"><i data-lucide="save" class="w-4 h-4"></i> 링크 저장 (.txt)</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl md:rounded-2xl p-5 border border-slate-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4 text-blue-600 font-bold"><i data-lucide="file-up" class="w-5 h-5 text-blue-600"></i> PDF 리소스 업로드</div>
+                    <div class="space-y-3">
+                        <input type="file" id="pdfFile" accept="application/pdf" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 cursor-pointer transition-all">
+                        <button onclick="uploadPdf()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 rounded-lg text-sm flex items-center justify-center gap-2 shadow-sm transition-all"><i data-lucide="upload-cloud" class="w-4 h-4"></i> 파일 업로드</button>
+                    </div>
+                </div>
+            </div>
+            <div id="loadingMsg" class="hidden mt-4 text-center animate-pulse"><span class="px-4 py-1 bg-amber-50 text-amber-600 rounded-full text-xs font-bold border border-amber-100">처리 중입니다...</span></div>
+        </section>
+
+        <section class="mb-10 md:mb-12">
+            <h2 class="text-lg md:text-xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b border-slate-200 pb-3">
+                <i data-lucide="headphones" class="w-5 h-5 text-rose-500"></i> 
+                CUSTOMER SUPPORT CENTER <span class="hidden sm:inline text-slate-400 text-sm font-normal ml-2">(장애 접수 및 기술 지원)</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex items-center justify-between group hover:border-rose-200 transition-all">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-slate-50 rounded-xl overflow-hidden p-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/HP_logo_2012.svg" alt="HPE" class="w-full object-contain">
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-slate-800 tracking-tight">HPE 고객지원센터</h3>
+                            <p class="text-xs text-slate-500 mt-1 flex items-center gap-1"><i data-lucide="phone" class="w-3 h-3 text-rose-400"></i> 1577-2912 / 3270</p>
+                        </div>
+                    </div>
+                    <a href="https://support.hpe.com/connect/s/?language=ko" target="_blank" class="px-4 py-2 bg-rose-50 text-rose-600 text-xs font-bold rounded-xl hover:bg-rose-600 hover:text-white transition-all flex items-center gap-2">장애 접수 <i data-lucide="external-link" class="w-3 h-3"></i></a>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex items-center justify-between group hover:border-blue-200 transition-all">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 flex items-center justify-center bg-slate-50 rounded-xl overflow-hidden p-2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg" alt="Dell" class="w-full object-contain">
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-slate-800 tracking-tight">Dell Technologies 지원</h3>
+                            <p class="text-xs text-slate-500 mt-1 flex items-center gap-1"><i data-lucide="phone" class="w-3 h-3 text-blue-400"></i> 080-850-5050 (엔터프라이즈)</p>
+                        </div>
+                    </div>
+                    <a href="https://www.dell.com/support/home/ko-kr" target="_blank" class="px-4 py-2 bg-blue-50 text-blue-600 text-xs font-bold rounded-xl hover:bg-blue-600 hover:text-white transition-all flex items-center gap-2">장애 접수 <i data-lucide="external-link" class="w-3 h-3"></i></a>
+                </div>
+                <div class="md:col-span-2 bg-slate-100/50 rounded-2xl p-4 border border-slate-200 flex flex-wrap items-center justify-center gap-6">
+                    <div class="flex items-center gap-2 text-xs font-medium text-slate-600"><span class="w-2 h-2 rounded-full bg-slate-400"></span> Lenovo 지원: 080-511-0010</div>
+                    <div class="flex items-center gap-2 text-xs font-medium text-slate-600"><span class="w-2 h-2 rounded-full bg-slate-400"></span> Fujitsu 지원: 080-750-6000</div>
+                    <div class="flex items-center gap-2 text-xs font-medium text-slate-600"><span class="w-2 h-2 rounded-full bg-slate-400"></span> Synology 지원: (공식 홈페이지 문의)</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-8 text-center border-t border-slate-100">
+            <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest leading-relaxed">
+                &copy; 2026 KMS_LM SITE Administration.<br class="sm:hidden"> All rights reserved.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz8jQTOhiB9NnLFmlqf0BQAAuochF_LdxxCgZHwH8HAVsy5vxaDQOX1HiJFzkt-Igld7Q/exec";
+
+        function showLoader(show) { document.getElementById('loadingMsg').style.display = show ? 'block' : 'none'; }
+
+        function saveLink() {
+            const url = document.getElementById('ytUrl').value;
+            if(!url) return alert("주소를 입력해주세요.");
+            showLoader(true);
+            fetch(SCRIPT_URL, { method: "POST", mode: "no-cors", body: JSON.stringify({ action: "SAVE_LINK", data: url }) })
+            .then(() => { alert("요청이 전송되었습니다."); document.getElementById('ytUrl').value = ""; showLoader(false); })
+            .catch(err => { alert("오류 발생"); showLoader(false); });
+        }
+
+        function uploadPdf() {
+            const fileInput = document.getElementById('pdfFile');
+            const file = fileInput.files[0];
+            if(!file) return alert("파일을 선택해주세요.");
+            const reader = new FileReader();
+            showLoader(true);
+            reader.onload = function(e) {
+                const base64Data = e.target.result.split(',')[1];
+                fetch(SCRIPT_URL, { method: "POST", mode: "no-cors", body: JSON.stringify({ action: "UPLOAD_PDF", fileName: file.name, data: base64Data }) })
+                .then(() => { alert("업로드 요청 완료!"); fileInput.value = ""; showLoader(false); });
+            };
+            reader.readAsDataURL(file);
+        }
+    </script>
+</body>
+</html>
